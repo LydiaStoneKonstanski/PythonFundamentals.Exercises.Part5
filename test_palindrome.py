@@ -21,4 +21,3 @@ class PalindromeTest(unittest.TestCase):
         for str_in, expected in test_cases:
             with self.subTest(f"{str_in} -> {expected}"):
                 self.assertEqual(expected, palindrome.is_palindrome(str_in))
-

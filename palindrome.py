@@ -5,10 +5,9 @@ def is_palindrome(value: str) -> bool:
     :param value: A string
     :return: A boolean
     """
-    #remove spaces, pop off the end and reconfigure to a new string? compare
-    # new and old strings return true if same, else false
-    value = value.replace(" ", "")
-    if value == reversed(value):
+    value = value.replace(" ", "").lower()
+    if value == value[::-1]:
         return True
     else:
-        False
+        return False
+
