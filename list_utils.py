@@ -1,3 +1,4 @@
+import math
 from typing import List
 from math import ceil
 
@@ -10,27 +11,28 @@ def get_item_at_position(list_in: List, pos: int) -> List:
     :param pos: Position of desired item in list_in
     :return: Item in pos
     """
-    pass  # remove pass statement and implement me
+    return list_in[pos]
+
 
 
 def print_list_items(list_in: List) -> None:
+
     """
     Given a list, this function iterates through it and prints each element.
 
     :param list_in: Input list
     :return: None
     """
-    pass  # remove pass statement and implement me
+    print(*list_in, sep = "\n")
 
 
 def sort_by_commit_count(list_in: List) -> List:
     """
     Given a list of entries, return a new list sorted based on the commit count.
-
     :param list_in: A list where each entry is a list containing a name and the commit count corresponding to a user
     :return: The same list sorted in ascending order based on the commit count
     """
-    pass  # remove pass statement and implement me
+    return sorted(list_in, key = lambda i:i[1])
 
 
 def gen_list_of_nums(n: int) -> List[int]:
@@ -40,7 +42,7 @@ def gen_list_of_nums(n: int) -> List[int]:
     :param n: The number of items the result should contain
     :return: A list of integers
     """
-    pass  # remove pass statement and implement me
+    return list(range(n))
 
 
 def half_list(list_in: List, half: int) -> List:
@@ -52,7 +54,13 @@ def half_list(list_in: List, half: int) -> List:
     If the length of list_in is an odd number, round the half value up (hint: math.ceil()).
     :return: A list.
     """
-    pass  # remove pass statement and implement me
+    new_list = len(list_in)
+    index_for_half = math.ceil(new_list/2)
+
+    if half == 1:
+        return list_in[:index_for_half]
+    else:
+        return list_in[index_for_half:]
 
 
 def remove_odds(list_in: List[int]) -> None:
