@@ -14,7 +14,7 @@ def get_item_at_position(list_in: List, pos: int) -> List:
     return list_in[pos]
 
 
-
+#It took me an embarrassing amount of time to realize this needed to print and not return. I blame fatigue
 def print_list_items(list_in: List) -> None:
 
     """
@@ -45,6 +45,8 @@ def gen_list_of_nums(n: int) -> List[int]:
     return list(range(n))
 
 
+
+
 def half_list(list_in: List, half: int) -> List:
     """
     Given a list, this function will return a new list that contains half of the items in the list_in parameter.
@@ -54,13 +56,32 @@ def half_list(list_in: List, half: int) -> List:
     If the length of list_in is an odd number, round the half value up (hint: math.ceil()).
     :return: A list.
     """
-    new_list = len(list_in)
-    index_for_half = math.ceil(new_list/2)
-
-    if half == 1:
-        return list_in[:index_for_half]
+    length = len(list_in)
+    half_length = math.ceil(length/2)
+    half_one = list_in[:half_length]
+    if length % 2 != 0:
+        half_two = list_in[half_length-1:]
     else:
-        return list_in[index_for_half:]
+        half_two = list_in[half_length:]
+    if half == 1:
+        return half_one
+    elif half == 2:
+        return half_two
+
+
+    #size_of_list = math.ceil(len(list_in)/2)
+    #half_one = list_in[size_of_list]
+    #half_two = list_in[size_of_list]
+
+    #if size_of_list == 1:
+    #    return half_one
+    #else:
+    #    return half_two
+
+
+
+
+
 
 
 def remove_odds(list_in: List[int]) -> None:
@@ -69,7 +90,14 @@ def remove_odds(list_in: List[int]) -> None:
 
     :return: None
     """
-    pass  # remove pass statement and implement me
+    for i in list_in[:]:
+        if i % 2 != 0:
+            list_in.remove(i)
+    return list_in
+
+
+
+
 
 
 def remove_evens(list_in: List[int]) -> None:
@@ -78,7 +106,10 @@ def remove_evens(list_in: List[int]) -> None:
 
     :return: None
     """
-    pass  # remove pass statement and implement me
+    for i in list_in[:]:
+        if i % 2 == 0:
+            list_in.remove(i)
+    return list_in
 
 
 def concatenate_lists(list_a: List, list_b: List) -> List:
@@ -89,7 +120,9 @@ def concatenate_lists(list_a: List, list_b: List) -> List:
     :param list_b: Another list
     :return: A list containing all elements from list_a and list_b
     """
-    pass  # remove pass statement and implement me
+    for i in list_b:
+        list_a.append(i)
+    return list_a
 
 
 def multiply_list(list_in: List, scalar: int) -> List:
@@ -101,4 +134,4 @@ def multiply_list(list_in: List, scalar: int) -> List:
     :param scalar: An integer
     :return: A list
     """
-    pass  # remove pass statement and implement me
+    return list_in * scalar

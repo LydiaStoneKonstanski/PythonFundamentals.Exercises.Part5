@@ -23,9 +23,6 @@ def input_has_substring(str_in: str, sub_str_in: str) -> bool:
         return False
 
 
-
-
-
 def substring(str_in: str, start: int, stop: int) -> str:
     """
     Returns the substring of a string.
